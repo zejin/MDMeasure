@@ -1,4 +1,4 @@
-# MDMeasure 0.1.0
+# MDMeasure 1.0.0
 
 - Initial commit.
 
