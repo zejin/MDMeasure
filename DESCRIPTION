@@ -1,6 +1,6 @@
 Package: MDMeasure
-Title: Mutual Dependence Measures
-Version: 0.0.0.9000
+Title: Mutual Dependence Measures via Energy Statistics
+Version: 1.0.0
 Date: 2018-01-30
 Authors@R: person("Ze", "Jin", email = "zj58@cornell.edu", role = c("aut", "cre"))
 Description: Implementation of mutual dependence measures and 

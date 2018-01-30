@@ -1,0 +1,15 @@
+citHeader("To cite MDMeasure in publications use:")
+
+citEntry(entry = "Article",
+  title        = "MDMeasure: Mutual Dependence Measures via Energy Statistics",
+  author       = personList(as.person("Ze Jin")),
+  journal      = "R package version",
+  year         = "2018",
+  volume       = "1",
+  number       = "0",
+
+  textVersion  =
+  paste("Ze Jin (2018).",
+        "MDMeasure: Mutual Dependence Measures via Energy Statistics.",
+        "R package version 1.0.")
+)
