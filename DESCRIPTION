@@ -1,0 +1,14 @@
+Package: MDMeasure
+Title: Mutual Dependence Measures
+Version: 0.0.0.9000
+Date: 2018-01-30
+Authors@R: person("Ze", "Jin", email = "zj58@cornell.edu", role = c("aut", "cre"))
+Description: Implementation of mutual dependence measures and 
+	associated mutual independence tests in Jin, Z. and Matteson, D. S. (2017) 
+	<https://arxiv.org/abs/1709.02532>.
+Depends: R (>= 3.4.3)
+Suggests: testthat
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+
