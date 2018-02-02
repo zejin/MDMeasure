@@ -2,7 +2,7 @@ library(devtools)
 
 # add a regular expression to .Rbuildignore
 if (.Platform$OS.type == "windows") {
-  setwd("C:/Academia/Cornell/Research/Mutual Multivariate Independence/Simulation")
+  setwd("C:/Academia/Cornell/Research/Mutual Multivariate Independence")
 } else {
   setwd("~")
 }
