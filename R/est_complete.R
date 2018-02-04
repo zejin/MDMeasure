@@ -24,6 +24,7 @@ est_complete <- function(X, D, Q, num_obs, num_dim, num_comp, index_comp) {
             NOBS=as.integer(num_obs),
             NDIM=as.integer(num_dim),
             NCOMP=as.integer(num_comp),
-            ICOMP=as.integer(index_comp))
+            ICOMP=as.integer(index_comp),
+	    PACKAGE = "MDMeasure")
   return(list(D = out$D, Q = out$Q))
 }

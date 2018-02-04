@@ -2,4 +2,3 @@
 
 export(add)
 export(est_complete)
-useDynLib(MDMeasure, .registration = TRUE)
