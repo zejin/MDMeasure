@@ -7,4 +7,4 @@ if (.Platform$OS.type == "windows") {
   setwd("~")
 }
 
-system.time(devtools::check("MDMeasure", manual = TRUE))
+system.time(devtools::check("MDMeasure", document = FALSE, manual = TRUE))
