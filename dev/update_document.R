@@ -8,3 +8,6 @@ if (.Platform$OS.type == "windows") {
 }
 
 devtools::document("MDMeasure")
+cat('useDynLib(MDMeasure, .registration = TRUE)', 
+    file = 'MDMeasure/NAMESPACE', append = TRUE)
+
