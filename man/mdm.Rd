@@ -4,7 +4,7 @@
 \alias{mdm}
 \title{Mutual Dependence Measures}
 \usage{
-mdm(X, dim_comp = NULL, dist_comp = FALSE, type = c("complete"))
+mdm(X, dim_comp = NULL, dist_comp = FALSE, type = c("comp_simp"))
 }
 \arguments{
 \item{X}{A matrix.}
@@ -15,10 +15,14 @@ mdm(X, dim_comp = NULL, dist_comp = FALSE, type = c("complete"))
 in X will be returned.}
 
 \item{type}{The type of mutual dependence measures, including
-- complete measure based on complete V-statistics
-- simplified complete measure based on incomplete V-statistics
-- asymmetric measure based on distance covariance
-- symmectric measure based on distance covariance}
+- \code{asym_dcov}: asymmetric measure based on distance covariance
+- \code{sym_dcov}: symmectric measure based on distance covariance
+- \code{comp}: complete measure based on complete V-statistics
+- \code{comp_simp}: simplified complete measure based on incomplete V-statistics
+- \code{asym_comp}: asymmetric measure based on complete measure
+- \code{asym_comp_simp}: simplified asymmetric measure based on simplified complete measure
+- \code{sym_comp}: symmectric measure based on complete measure
+- \code{sym_comp_simp}: simplified symmectric measure based on simplified complete measure}
 }
 \value{
 \code{mdm} returns a list containing the following components:
@@ -30,7 +34,14 @@ in X will be returned.}
 }
 \examples{
 X <- matrix(rnorm(30), 10, 3)
-mdm(X)
+mdm(X, type = 'asym_dcov')
+mdm(X, type = 'sym_dcov')
+mdm(X, type = 'comp')
+mdm(X, type = 'comp_simp')
+mdm(X, type = 'asym_comp')
+mdm(X, type = 'asym_comp_simp')
+mdm(X, type = 'sym_comp')
+mdm(X, type = 'sym_comp_simp')
 }
 \references{
 Jin, Z. and Matteson, D. S. (2017).
