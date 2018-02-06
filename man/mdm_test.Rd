@@ -56,13 +56,13 @@ All tests are implemented as permutation tests.
 X <- matrix(rnorm(10 * 3), 10, 3)
 
 # assume X = (X1, X2) where X1 is 1-dim, X2 is 2-dim
-mdm_test(X, dim_comp = c(1, 2), type = 'asym_dcov')
+mdm_test(X, dim_comp = c(1, 2), type = "asym_dcov")
 
 # assume X = (X1, X2) where X1 is 2-dim, X2 is 1-dim
-mdm_test(X, dim_comp = c(2, 1), type = 'sym_dcov')
+mdm_test(X, dim_comp = c(2, 1), type = "sym_dcov")
 
 # assume X = (X1, X2, X3) where X1 is 1-dim, X2 is 1-dim, X3 is 1-dim
-mdm_test(X, dim_comp = c(1, 1, 1), type = 'comp_simp')
+mdm_test(X, dim_comp = c(1, 1, 1), type = "comp_simp")
 }
 }
 \references{
