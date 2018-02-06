@@ -4,4 +4,4 @@
 
 - Add R functions: estimation and testing.
 
-- Add R tests: estimation and testing checks.
+- Add R tests: estimation checks.

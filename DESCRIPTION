@@ -4,10 +4,17 @@ Version: 1.0.0
 Date: 2018-01-30
 Authors@R: person("Ze", "Jin", email = "zj58@cornell.edu", role = c("aut", "cre"))
 Description: Implementation of mutual dependence measures and 
-	associated mutual independence tests in Jin, Z. and Matteson, D. S. (2017) 
+	mutual independence tests in Jin, Z. and Matteson, D. S. (2017) 
 	<https://arxiv.org/abs/1709.02532>.
-Depends: R (>= 3.2.3)
-Suggests: testthat
+Depends: 
+	R (>= 3.4.0)
+Suggests: 
+	testthat (>= 2.0.0),
+	energy (>= 1.7-0)
 License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 6.0.1
+Collate: 
+    'MDMeasure-package.R'
+    'mdm.R'
+    'mdm_test.R'

@@ -16,6 +16,7 @@ extern void next_index_complete(int *index, int nobs, int ncomp);
 extern void next_index_incomplete(int *index, int nobs, int ncomp);
 
 /* dCov */
+/* assume X and Y have the same dimension */
 void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIM);
 
 void dCov_perm(double *XX, double *YY, double *Q, int *NOBS, int *IPERM);
@@ -97,6 +98,7 @@ void MDM_symmetric_simple_perm(double *D, double *Q, int *NOBS, int *NCOMP, int 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* dCov */
+/* assume X and Y have the same dimension */
 void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIM) {
   int nobs = NOBS[0];
   int ndim = NDIM[0];
@@ -386,7 +388,7 @@ void dCov_symmetric(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *
   // printf("========== asymmetric mutual independence measure ==========\n");
 
   // calculate Q
-  for (i = 0; i < ncomp - 1; ++i) {
+  for (i = 0; i < ncomp; ++i) {
     double c0 = dCov_symmetric_single(D, nobs, ncomp, i);
     // double c1 = MDM_term2_asymmetric(D, nobs, ncomp, i);
     // double c2 = MDM_term3_asymmetric(D, nobs, ncomp, i);
@@ -480,7 +482,7 @@ void dCov_symmetric_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM
   // double temp;
 
   // calculate Q
-  for (i = 0; i < ncomp - 1; ++i) {
+  for (i = 0; i < ncomp; ++i) {
     double c0 = dCov_symmetric_single_perm(D, nobs, ncomp, i, IPERM);
     // double c1 = MDM_term2_asymmetric_perm(D, nobs, ncomp, i, IPERM);
     // double c2 = MDM_term3_asymmetric_perm(D, nobs, ncomp, i, IPERM);

@@ -1,5 +1,6 @@
 ## Test environments
 * local Windows 10 install, R 3.4.3
+* rocks 6.0 with CentOS 6.2, R 3.4.0
 * ubuntu 14.04 (on travis-ci), R 3.4.2
 * win-builder (devel and release)
  

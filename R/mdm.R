@@ -1,24 +1,26 @@
 #' Mutual Dependence Measures
 #'
-#' \code{mdm} computes mutual dependence measures.
+#' \code{mdm} measures mutual dependence of all components in \code{X},
+#' where each component contains one variable (univariate) or more variables (multivariate).
 #'
-#' @param X A matrix.
-#' @param dim_comp The dimensions of components in X \code{X}.
-#' @param dist_comp Logical. If \code{TRUE}, the distances between all components
-#'   in X will be returned.
+#' @param X A matrix or data frame, where rows represent samples, and columns represent variables.
+#' @param dim_comp The numbers of variables included by all components in \code{X}.
+#'   If omitted, each component is assumed to contain exactly one variable.
+#' @param dist_comp Logical. If \code{TRUE}, the distances between all components from all samples
+#'   in \code{X} will be returned.
 #' @param type The type of mutual dependence measures, including
-#'   - \code{asym_dcov}: asymmetric measure based on distance covariance
-#'   - \code{sym_dcov}: symmectric measure based on distance covariance
-#'   - \code{comp}: complete measure based on complete V-statistics
-#'   - \code{comp_simp}: simplified complete measure based on incomplete V-statistics
-#'   - \code{asym_comp}: asymmetric measure based on complete measure
-#'   - \code{asym_comp_simp}: simplified asymmetric measure based on simplified complete measure
-#'   - \code{sym_comp}: symmectric measure based on complete measure
-#'   - \code{sym_comp_simp}: simplified symmectric measure based on simplified complete measure
+#'   (1) \code{asym_dcov}: asymmetric measure based on distance covariance;
+#'   (2) \code{sym_dcov}: symmectric measure based on distance covariance;
+#'   (3) \code{comp}: complete measure based on complete V-statistics;
+#'   (4) \code{comp_simp}: simplified complete measure based on incomplete V-statistics;
+#'   (5) \code{asym_comp}: asymmetric measure based on complete measure;
+#'   (6) \code{asym_comp_simp}: simplified asymmetric measure based on simplified complete measure;
+#'   (7) \code{sym_comp}: symmectric measure based on complete measure;
+#'   (8) \code{sym_comp_simp}: simplified symmectric measure based on simplified complete measure.
 #'
 #' @return \code{mdm} returns a list containing the following components:
 #' \item{stat}{The value of mutual dependence measure.}
-#' \item{dist}{The distances between all components.}
+#' \item{dist}{The distances between all components in all samples.}
 #'
 #' @references Jin, Z. and Matteson, D. S. (2017).
 #'   Generalizing Distance Covariance to Measure and Test Multivariate Mutual Dependence.
@@ -38,11 +40,7 @@
 #' mdm(X, type = 'sym_comp')
 #' mdm(X, type = 'sym_comp_simp')
 
-mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
-  if (!is.numeric(X)) {
-    stop('X must be numeric.')
-  }
-
+mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
   X <- as.matrix(X)
   num_obs <- nrow(X)
   num_dim <- ncol(X)
@@ -52,14 +50,14 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
   }
 
   if (num_dim != sum(dim_comp)) {
-    stop('The dimensions of X and components do not agree.')
+    stop("The dimensions of X and components do not agree.")
   }
 
-  X <- as.vector(t(X))
   num_comp <- length(dim_comp)
   index_comp <- cumsum(c(1, dim_comp)) - 1
+  X <- as.vector(t(X))
 
-  if (type == 'asym_dcov') {
+  if (type == "asym_dcov") {
     out <- .C("dCov_asymmetric",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
@@ -69,8 +67,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
               NCOMP = as.integer(num_comp),
               ICOMP = as.integer(index_comp),
               PACKAGE = "MDMeasure")
-
-  } else if (type == 'sym_dcov') {
+  } else if (type == "sym_dcov") {
     out <- .C("dCov_symmetric",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
@@ -80,8 +77,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
               NCOMP = as.integer(num_comp),
               ICOMP = as.integer(index_comp),
               PACKAGE = "MDMeasure")
-
-  } else if (type == 'comp') {
+  } else if (type == "comp") {
     out <- .C("MDM_complete",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
@@ -91,8 +87,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
               NCOMP = as.integer(num_comp),
               ICOMP = as.integer(index_comp),
               PACKAGE = "MDMeasure")
-
-  } else if (type == 'comp_simp') {
+  } else if (type == "comp_simp") {
     out <- .C("MDM_complete_simple",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
@@ -102,8 +97,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
               NCOMP = as.integer(num_comp),
               ICOMP = as.integer(index_comp),
               PACKAGE = "MDMeasure")
-
-  } else if (type == 'asym_comp') {
+  } else if (type == "asym_comp") {
     out <- .C("MDM_asymmetric",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
@@ -113,8 +107,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
               NCOMP = as.integer(num_comp),
               ICOMP = as.integer(index_comp),
               PACKAGE = "MDMeasure")
-
-  } else if (type == 'asym_comp_simp') {
+  } else if (type == "asym_comp_simp") {
     out <- .C("MDM_asymmetric_simple",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
@@ -124,8 +117,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
               NCOMP = as.integer(num_comp),
               ICOMP = as.integer(index_comp),
               PACKAGE = "MDMeasure")
-
-  } else if (type == 'sym_comp') {
+  } else if (type == "sym_comp") {
     out <- .C("MDM_symmetric",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
@@ -135,8 +127,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
               NCOMP = as.integer(num_comp),
               ICOMP = as.integer(index_comp),
               PACKAGE = "MDMeasure")
-
-  } else if (type == 'sym_comp_simp') {
+  } else if (type == "sym_comp_simp") {
     out <- .C("MDM_symmetric_simple",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
@@ -146,9 +137,8 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = c('comp_simp')) {
               NCOMP = as.integer(num_comp),
               ICOMP = as.integer(index_comp),
               PACKAGE = "MDMeasure")
-
   } else {
-    stop('Invalid type. Read ?mdm for proper syntax.')
+    stop("Invalid type. Read ?mdm for proper syntax.")
   }
 
   if (dist_comp) {

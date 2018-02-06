@@ -13,14 +13,18 @@ The two main parts are:
 ## Measuring mutual dependence
 
 The mutual dependence measures:
-- complete measure based on complete V-statistics
-- simplified complete measure based on incomplete V-statistics
 - asymmetric measure based on distance covariance
 - symmectric measure based on distance covariance
+- complete measure based on complete V-statistics
+- simplified complete measure based on incomplete V-statistics
+- asymmetric measure based on complete measure
+- simplified asymmetric measure based on simplified complete measure
+- symmectric measure based on complete measure
+- simplified symmectric measure based on simplified complete measure
 
 ## Testing mutual independence
 
-The permutation tests based on the mutual dependence measures.
+The mutual independence tests based on the mutual dependence measures are implemented as permutation tests.
 
 ## Installation
 
