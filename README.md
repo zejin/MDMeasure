@@ -12,7 +12,7 @@ The two main parts are:
 
 ## Measuring mutual dependence
 
-The mutual dependence measures:
+The mutual dependence measures include:
 - asymmetric measure based on distance covariance
 - symmectric measure based on distance covariance
 - complete measure based on complete V-statistics

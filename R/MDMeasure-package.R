@@ -3,14 +3,30 @@
 #' The MDMeasure package provides measures of mutual dependence and tests of mutual independence. 
 #' 
 #' @section Measuring mutual dependence:
-#' The mutual dependence measures:
-#' - complete measure based on complete V-statistics
-#' - simplified complete measure based on incomplete V-statistics
-#' - asymmetric measure based on distance covariance
-#' - symmectric measure based on distance covariance 
 #'
-#' @section Initializing local optimization methods:
-#' The permutation tests based on the mutual dependence measures.
+#' The mutual dependence measures include:
+#'
+#' - asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance \eqn{\mathcal{V}_n}
+#'
+#' - symmectric measure \eqn{\mathcal{S}_n} based on distance covariance \eqn{\mathcal{V}_n}
+#'
+#' - complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics
+#'
+#' - simplified complete measure \eqn{\mathcal{Q}_n^\star} based on incomplete V-statistics
+#'
+#' - asymmetric measure \eqn{\mathcal{J}_n} based on complete measure \eqn{\mathcal{Q}_n}
+#'
+#' - simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on simplified complete measure 
+#'   \eqn{\mathcal{Q}_n^\star}
+#'
+#' - symmectric measure \eqn{\mathcal{I}_n} based on complete measure \eqn{\mathcal{Q}_n}
+#'
+#' - simplified symmectric measure \eqn{\mathcal{I}_n^\star} based on simplified complete measure 
+#'   \eqn{\mathcal{Q}_n^\star}
+#'
+#' @section Testing mutual independence:
+#'
+#' The mutual independence tests based on the mutual dependence measures are implemented as permutation tests.
 #'
 #' @name MDMeasure-package
 #'

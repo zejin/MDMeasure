@@ -4,23 +4,38 @@
 #' where each component contains one variable (univariate) or more variables (multivariate).
 #'
 #' @param X A matrix or data frame, where rows represent samples, and columns represent variables.
-#' @param dim_comp The numbers of variables included by all components in \code{X}.
+#' @param dim_comp The numbers of variables contained by all components in \code{X}.
 #'   If omitted, each component is assumed to contain exactly one variable.
 #' @param dist_comp Logical. If \code{TRUE}, the distances between all components from all samples
 #'   in \code{X} will be returned.
 #' @param type The type of mutual dependence measures, including
-#'   (1) \code{asym_dcov}: asymmetric measure based on distance covariance;
-#'   (2) \code{sym_dcov}: symmectric measure based on distance covariance;
-#'   (3) \code{comp}: complete measure based on complete V-statistics;
-#'   (4) \code{comp_simp}: simplified complete measure based on incomplete V-statistics;
-#'   (5) \code{asym_comp}: asymmetric measure based on complete measure;
-#'   (6) \code{asym_comp_simp}: simplified asymmetric measure based on simplified complete measure;
-#'   (7) \code{sym_comp}: symmectric measure based on complete measure;
-#'   (8) \code{sym_comp_simp}: simplified symmectric measure based on simplified complete measure.
 #'
-#' @return \code{mdm} returns a list containing the following components:
+#'   - \code{asym_dcov}: asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance 
+#'     \eqn{\mathcal{V}_n};
+#'
+#'   - \code{sym_dcov}: symmectric measure \eqn{\mathcal{S}_n} based on distance covariance 
+#'     \eqn{\mathcal{V}_n};
+#'
+#'   - \code{comp}: complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics;
+#'
+#'   - \code{comp_simp}: simplified complete measure \eqn{\mathcal{Q}_n^\star} based on 
+#'     incomplete V-statistics;
+#'
+#'   - \code{asym_comp}: asymmetric measure \eqn{\mathcal{J}_n} based on complete measure 
+#'     \eqn{\mathcal{Q}_n};
+#'
+#'   - \code{asym_comp_simp}: simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on 
+#'     simplified complete measure \eqn{\mathcal{Q}_n^\star};
+#'
+#'   - \code{sym_comp}: symmectric measure \eqn{\mathcal{I}_n} based on complete measure 
+#'     \eqn{\mathcal{Q}_n};
+#'
+#'   - \code{sym_comp_simp}: simplified symmectric measure \eqn{\mathcal{I}_n^\star} based on 
+#'     simplified complete measure \eqn{\mathcal{Q}_n^\star}.
+#'
+#' @return \code{mdm} returns a list including the following components:
 #' \item{stat}{The value of mutual dependence measure.}
-#' \item{dist}{The distances between all components in all samples.}
+#' \item{dist}{The distances between all components from all samples.}
 #'
 #' @references Jin, Z. and Matteson, D. S. (2017).
 #'   Generalizing Distance Covariance to Measure and Test Multivariate Mutual Dependence.
@@ -30,15 +45,17 @@
 #' @export
 #'
 #' @examples
-#' X <- matrix(rnorm(30), 10, 3)
-#' mdm(X, type = 'asym_dcov')
-#' mdm(X, type = 'sym_dcov')
-#' mdm(X, type = 'comp')
-#' mdm(X, type = 'comp_simp')
-#' mdm(X, type = 'asym_comp')
-#' mdm(X, type = 'asym_comp_simp')
-#' mdm(X, type = 'sym_comp')
-#' mdm(X, type = 'sym_comp_simp')
+#' # X is a 10 x 3 matrix with 10 samples and 3 variables
+#' X <- matrix(rnorm(10 * 3), 10, 3)
+#'
+#' # assume X = (X1, X2) where X1 is 1-dim, X2 is 2-dim
+#' mdm(X, dim_comp = c(1, 2), type = 'asym_dcov')
+#'
+#' # assume X = (X1, X2) where X1 is 2-dim, X2 is 1-dim
+#' mdm(X, dim_comp = c(2, 1), type = 'sym_dcov')
+#'
+#' # assume X = (X1, X2, X3) where X1 is 1-dim, X2 is 1-dim, X3 is 1-dim
+#' mdm(X, dim_comp = c(1, 1, 1), type = 'comp_simp')
 
 mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
   X <- as.matrix(X)
@@ -146,6 +163,5 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
   } else {
     return(list(stat = out$Q))
   }
-
 }
 

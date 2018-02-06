@@ -3,12 +3,20 @@
 #include <string.h>
 #include <math.h>
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+///// declarations
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void double_center(int n, int p, double *X, double *XX);
 double inner_prod(int n, double *XX, double *YY);
 double inner_prod_perm(int n, int *P, double *XX, double *YY);
 void square_dist(double *X, double *D, int nobs, int ndim, int ncomp, int *ICOMP);
 void next_index_complete(int *index, int nobs, int ncomp);
 void next_index_incomplete(int *index, int nobs, int ncomp);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+///// functions
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // X is a p x n matrix, XX is a n x n matrix
 void double_center(int n, int p, double *X, double *XX) {
@@ -82,7 +90,7 @@ double inner_prod_perm(int n, int *P, double *XX, double *YY) {
   return sum / n / n;
 }
 
-// D a ncomp x nobs x nobs vector
+// D is a ncomp x nobs x nobs vector
 void square_dist(double *X, double *D, int nobs, int ndim, int ncomp, int *ICOMP) {
   int i, j, k, l;
   double diff, sumsq;

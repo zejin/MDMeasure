@@ -35,7 +35,7 @@ void dCov_symmetric(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *
 double dCov_symmetric_single_perm(double *D, int nobs, int ncomp, int start, int *IPERM);
 void dCov_symmetric_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
 
-/* common term in MDM */
+/* common term in MDM based on (simplified) complete MDM */
 double MDM_term1(double *D, int nobs, int ncomp, int start);
 double MDM_term1_perm(double *D, int nobs, int ncomp, int start, int *IPERM);
 
@@ -385,7 +385,7 @@ void dCov_symmetric(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *
   // calculate D
   square_dist(X, D, nobs, ndim, ncomp, ICOMP);
 
-  // printf("========== asymmetric mutual independence measure ==========\n");
+  // printf("========== symmetric mutual independence measure ==========\n");
 
   // calculate Q
   for (i = 0; i < ncomp; ++i) {
@@ -505,7 +505,7 @@ void dCov_symmetric_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM
 ///// mutual dependence measures based on complete measure
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* common term in MDM */
+/* common term in MDM based on (simplified) complete MDM */
 double MDM_term1(double *D, int nobs, int ncomp, int start) {
   int i, j, k;
   double total = 0.0; 
