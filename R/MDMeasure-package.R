@@ -36,6 +36,7 @@
 #'
 #' @title Mutual Dependence Measures via Energy Statistics
 #'
-#' @author Ze Jin \email{zj58@@cornell.edu}
+#' @author Ze Jin \email{zj58@@cornell.edu},
+#'   David S. Matteson \email{matteson@cornell.edu}
 
 NULL 

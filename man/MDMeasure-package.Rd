@@ -42,5 +42,6 @@ The mutual independence tests based on the mutual dependence measures are implem
 }
 
 \author{
-Ze Jin \email{zj58@cornell.edu}
+Ze Jin \email{zj58@cornell.edu},
+  David S. Matteson \email{matteson@cornell.edu}
 }

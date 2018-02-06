@@ -2,7 +2,10 @@ Package: MDMeasure
 Title: Mutual Dependence Measures via Energy Statistics
 Version: 1.0.0
 Date: 2018-01-30
-Authors@R: person("Ze", "Jin", email = "zj58@cornell.edu", role = c("aut", "cre"))
+Authors@R: c(
+	person("Ze", "Jin", email = "zj58@cornell.edu", role = c("aut", "cre")),
+	person("David", "Matteson S.", email = "matteson@cornell.edu", role = c("aut"))
+	)
 Description: Implementation of mutual dependence measures and 
 	mutual independence tests in Jin, Z. and Matteson, D. S. (2017) 
 	<https://arxiv.org/abs/1709.02532>.
