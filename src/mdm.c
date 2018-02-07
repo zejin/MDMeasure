@@ -17,7 +17,7 @@ extern void next_index_incomplete(int *index, int nobs, int ncomp);
 
 /* dCov */
 /* assume X and Y have the same dimension */
-void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIM);
+void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIMX, int *NDIMY);
 
 void dCov_perm(double *XX, double *YY, double *Q, int *NOBS, int *IPERM);
 
@@ -99,12 +99,13 @@ void MDM_symmetric_simple_perm(double *D, double *Q, int *NOBS, int *NCOMP, int 
 
 /* dCov */
 /* assume X and Y have the same dimension */
-void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIM) {
+void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIMX, int *NDIMY) {
   int nobs = NOBS[0];
-  int ndim = NDIM[0];
+  int ndimx = NDIMX[0];
+  int ndimy = NDIMY[0];
 
-  double_center(nobs, ndim, X, XX);
-  double_center(nobs, ndim, Y, YY);
+  double_center(nobs, ndimx, X, XX);
+  double_center(nobs, ndimy, Y, YY);
 
   Q[0] = inner_prod(nobs, XX, YY);
 }

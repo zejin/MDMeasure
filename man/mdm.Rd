@@ -63,7 +63,7 @@ mdm(X, dim_comp = c(2, 1), type = "sym_dcov")
 mdm(X, dim_comp = c(1, 1, 1), type = "comp_simp")
 }
 \references{
-Jin, Z. and Matteson, D. S. (2017).
+Jin, Z., and Matteson, D. S. (2017).
   Generalizing Distance Covariance to Measure and Test Multivariate Mutual Dependence.
   arXiv preprint arXiv:1709.02532.
   \url{https://arxiv.org/abs/1709.02532}.

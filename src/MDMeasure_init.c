@@ -8,7 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* .C calls */
-extern void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIM);
+extern void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIMX, int *NDIMY);
 extern void dCov_perm(double *XX, double *YY, double *Q, int *NOBS, int *IPERM);
 
 extern void dCov_asymmetric(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
@@ -36,7 +36,7 @@ extern void MDM_symmetric_simple(double *X, double *D, double *Q, int *NOBS, int
 extern void MDM_symmetric_simple_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
 
 static const R_CMethodDef CEntries[] = {
-  {"dCov",                       (DL_FUNC) &dCov,                       7},
+  {"dCov",                       (DL_FUNC) &dCov,                       8},
   {"dCov_perm",                  (DL_FUNC) &dCov_perm,                  5},
   {"dCov_asymmetric",            (DL_FUNC) &dCov_asymmetric,            7},
   {"dCov_asymmetric_perm",       (DL_FUNC) &dCov_asymmetric_perm,       5},

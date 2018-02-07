@@ -37,7 +37,7 @@
 #' \item{stat}{The value of mutual dependence measure.}
 #' \item{dist}{The distances between all components from all samples.}
 #'
-#' @references Jin, Z. and Matteson, D. S. (2017).
+#' @references Jin, Z., and Matteson, D. S. (2017).
 #'   Generalizing Distance Covariance to Measure and Test Multivariate Mutual Dependence.
 #'   arXiv preprint arXiv:1709.02532.
 #'   \url{https://arxiv.org/abs/1709.02532}.

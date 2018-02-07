@@ -7,4 +7,4 @@ if (.Platform$OS.type == "windows") {
 
 system("R CMD Rd2pdf MDMeasure")
 system("mv MDMeasure.pdf MDMeasure/dev/doc")
-# system("R CMD check rddapp")
+# system("R CMD check MDMeasure")
