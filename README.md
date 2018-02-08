@@ -14,13 +14,13 @@ The two main parts are:
 
 The mutual dependence measures include:
 - asymmetric measure based on distance covariance
-- symmectric measure based on distance covariance
+- symmetric measure based on distance covariance
 - complete measure based on complete V-statistics
 - simplified complete measure based on incomplete V-statistics
 - asymmetric measure based on complete measure
 - simplified asymmetric measure based on simplified complete measure
-- symmectric measure based on complete measure
-- simplified symmectric measure based on simplified complete measure
+- symmetric measure based on complete measure
+- simplified symmetric measure based on simplified complete measure
 
 ## Testing mutual independence
 

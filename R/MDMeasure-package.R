@@ -8,7 +8,7 @@
 #'
 #' - asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance \eqn{\mathcal{V}_n}
 #'
-#' - symmectric measure \eqn{\mathcal{S}_n} based on distance covariance \eqn{\mathcal{V}_n}
+#' - symmetric measure \eqn{\mathcal{S}_n} based on distance covariance \eqn{\mathcal{V}_n}
 #'
 #' - complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics
 #'
@@ -19,9 +19,9 @@
 #' - simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on simplified complete measure 
 #'   \eqn{\mathcal{Q}_n^\star}
 #'
-#' - symmectric measure \eqn{\mathcal{I}_n} based on complete measure \eqn{\mathcal{Q}_n}
+#' - symmetric measure \eqn{\mathcal{I}_n} based on complete measure \eqn{\mathcal{Q}_n}
 #'
-#' - simplified symmectric measure \eqn{\mathcal{I}_n^\star} based on simplified complete measure 
+#' - simplified symmetric measure \eqn{\mathcal{I}_n^\star} based on simplified complete measure 
 #'   \eqn{\mathcal{Q}_n^\star}
 #'
 #' @section Testing mutual independence:

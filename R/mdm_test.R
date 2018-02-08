@@ -14,7 +14,7 @@
 #'   - \code{asym_dcov}: asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance 
 #'     \eqn{\mathcal{V}_n};
 #'
-#'   - \code{sym_dcov}: symmectric measure \eqn{\mathcal{S}_n} based on distance covariance 
+#'   - \code{sym_dcov}: symmetric measure \eqn{\mathcal{S}_n} based on distance covariance 
 #'     \eqn{\mathcal{V}_n};
 #'
 #'   - \code{comp}: complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics;
@@ -28,10 +28,10 @@
 #'   - \code{asym_comp_simp}: simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on 
 #'     simplified complete measure \eqn{\mathcal{Q}_n^\star};
 #'
-#'   - \code{sym_comp}: symmectric measure \eqn{\mathcal{I}_n} based on complete measure 
+#'   - \code{sym_comp}: symmetric measure \eqn{\mathcal{I}_n} based on complete measure 
 #'     \eqn{\mathcal{Q}_n};
 #'
-#'   - \code{sym_comp_simp}: simplified symmectric measure \eqn{\mathcal{I}_n^\star} based on 
+#'   - \code{sym_comp_simp}: simplified symmetric measure \eqn{\mathcal{I}_n^\star} based on 
 #'     simplified complete measure \eqn{\mathcal{Q}_n^\star}.
 #'
 #' @return \code{mdm_test} returns a list including the following components:
