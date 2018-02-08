@@ -15,8 +15,7 @@ extern void square_dist(double *X, double *D, int nobs, int ndim, int ncomp, int
 extern void next_index_complete(int *index, int nobs, int ncomp);
 extern void next_index_incomplete(int *index, int nobs, int ncomp);
 
-/* dCov */
-/* assume X and Y have the same dimension */
+/* squared dCov */
 void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIMX, int *NDIMY);
 
 void dCov_perm(double *XX, double *YY, double *Q, int *NOBS, int *IPERM);
@@ -97,8 +96,7 @@ void MDM_symmetric_simple_perm(double *D, double *Q, int *NOBS, int *NCOMP, int 
 ///// mutual dependence measures based on distance covariance
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* dCov */
-/* assume X and Y have the same dimension */
+/* squared dCov */
 void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIMX, int *NDIMY) {
   int nobs = NOBS[0];
   int ndimx = NDIMX[0];
