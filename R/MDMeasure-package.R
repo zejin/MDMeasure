@@ -26,7 +26,8 @@
 #'
 #' @section Testing mutual independence:
 #'
-#' The mutual independence tests based on the mutual dependence measures are implemented as permutation tests.
+#' The mutual independence tests based on the mutual dependence measures are implemented as permutation 
+#' tests.
 #'
 #' @name MDMeasure-package
 #'

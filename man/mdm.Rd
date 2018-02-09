@@ -15,34 +15,26 @@ If omitted, each component is assumed to contain exactly one variable.}
 \item{dist_comp}{Logical. If \code{TRUE}, the distances between all components from all samples
 in \code{X} will be returned.}
 
-\item{type}{The type of mutual dependence measures, including
-
-  - \code{asym_dcov}: asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance 
-    \eqn{\mathcal{V}_n};
-
-  - \code{sym_dcov}: symmetric measure \eqn{\mathcal{S}_n} based on distance covariance 
-    \eqn{\mathcal{V}_n};
-
-  - \code{comp}: complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics;
-
-  - \code{comp_simp}: simplified complete measure \eqn{\mathcal{Q}_n^\star} based on 
-    incomplete V-statistics;
-
-  - \code{asym_comp}: asymmetric measure \eqn{\mathcal{J}_n} based on complete measure 
-    \eqn{\mathcal{Q}_n};
-
-  - \code{asym_comp_simp}: simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on 
-    simplified complete measure \eqn{\mathcal{Q}_n^\star};
-
-  - \code{sym_comp}: symmetric measure \eqn{\mathcal{I}_n} based on complete measure 
-    \eqn{\mathcal{Q}_n};
-
-  - \code{sym_comp_simp}: simplified symmetric measure \eqn{\mathcal{I}_n^\star} based on 
-    simplified complete measure \eqn{\mathcal{Q}_n^\star}.}
+\item{type}{The type of mutual dependence measures, including \cr
+- \code{asym_dcov}: asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance
+  \eqn{\mathcal{V}_n}; \cr
+- \code{sym_dcov}: symmetric measure \eqn{\mathcal{S}_n} based on distance covariance
+  \eqn{\mathcal{V}_n}; \cr
+- \code{comp}: complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics; \cr
+- \code{comp_simp}: simplified complete measure \eqn{\mathcal{Q}_n^\star} based on
+  incomplete V-statistics; \cr
+- \code{asym_comp}: asymmetric measure \eqn{\mathcal{J}_n} based on complete measure
+  \eqn{\mathcal{Q}_n}; \cr
+- \code{asym_comp_simp}: simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on
+  simplified complete measure \eqn{\mathcal{Q}_n^\star}; \cr
+- \code{sym_comp}: symmetric measure \eqn{\mathcal{I}_n} based on complete measure
+  \eqn{\mathcal{Q}_n}; \cr
+- \code{sym_comp_simp}: simplified symmetric measure \eqn{\mathcal{I}_n^\star} based on
+  simplified complete measure \eqn{\mathcal{Q}_n^\star}.}
 }
 \value{
 \code{mdm} returns a list including the following components:
-\item{stat}{The value of mutual dependence measure.}
+\item{stat}{The value of the mutual dependence measure.}
 \item{dist}{The distances between all components from all samples.}
 }
 \description{

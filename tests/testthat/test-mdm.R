@@ -24,7 +24,7 @@ test_that("comp vs. asym_comp/sym_comp univariate", {
   expect_equal(m1, m3)
 })
 
-test_that("comp_simp vs. asym_comp_simp/sym_comp-simp univariate", {
+test_that("comp_simp vs. asym_comp_simp univariate", {
   m1 <- MDMeasure::mdm(X, dim_comp = dim_comp, type = "comp_simp")$stat
   m2 <- MDMeasure::mdm(X, dim_comp = dim_comp, type = "asym_comp_simp")$stat
 
@@ -55,7 +55,7 @@ test_that("comp vs. asym_comp/sym_comp multivariate", {
   expect_equal(m1, m3)
 })
 
-test_that("comp_simp vs. asym_comp_simp/sym_comp_simp multivariate", {
+test_that("comp_simp vs. asym_comp_simp multivariate", {
   m1 <- MDMeasure::mdm(X, dim_comp = dim_comp, type = "comp_simp")$stat
   m2 <- MDMeasure::mdm(X, dim_comp = dim_comp, type = "asym_comp_simp")$stat
 
