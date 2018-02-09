@@ -6,8 +6,8 @@ Authors@R: c(
     person("Ze", "Jin", email = "zj58@cornell.edu", role = c("aut", "cre")),
     person("David S.", "Matteson", email = "matteson@cornell.edu", role = c("aut"))
     )
-Description: Implementation of mutual dependence measures and mutual independence tests 
-    in Jin, Z., and Matteson, D. S. (2017) <https://arxiv.org/abs/1709.02532>.
+Description: Implementation of mutual dependence measures and mutual independence tests in 
+    Jin, Z., and Matteson, D. S. (2017) <https://arxiv.org/abs/1709.02532>.
 Depends: 
     R (>= 3.4.0)
 Suggests: 
