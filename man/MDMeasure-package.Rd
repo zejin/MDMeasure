@@ -13,17 +13,19 @@ The MDMeasure package provides measures of mutual dependence and tests of mutual
 }
 \section{Measuring mutual dependence}{
 
-The mutual dependence measures include: \cr
-- asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance \eqn{\mathcal{V}_n} \cr
-- symmetric measure \eqn{\mathcal{S}_n} based on distance covariance \eqn{\mathcal{V}_n} \cr
-- complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics \cr
-- simplified complete measure \eqn{\mathcal{Q}_n^\star} based on incomplete V-statistics \cr
-- asymmetric measure \eqn{\mathcal{J}_n} based on complete measure \eqn{\mathcal{Q}_n} \cr
-- simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on simplified complete measure 
-  \eqn{\mathcal{Q}_n^\star} \cr
-- symmetric measure \eqn{\mathcal{I}_n} based on complete measure \eqn{\mathcal{Q}_n} \cr
-- simplified symmetric measure \eqn{\mathcal{I}_n^\star} based on simplified complete measure 
-  \eqn{\mathcal{Q}_n^\star}
+The mutual dependence measures include: 
+\itemize{
+  \item asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance \eqn{\mathcal{V}_n}
+  \item symmetric measure \eqn{\mathcal{S}_n} based on distance covariance \eqn{\mathcal{V}_n}
+  \item complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics
+  \item simplified complete measure \eqn{\mathcal{Q}_n^\star} based on incomplete V-statistics
+  \item asymmetric measure \eqn{\mathcal{J}_n} based on complete measure \eqn{\mathcal{Q}_n}
+  \item simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on simplified complete measure 
+    \eqn{\mathcal{Q}_n^\star}
+  \item symmetric measure \eqn{\mathcal{I}_n} based on complete measure \eqn{\mathcal{Q}_n}
+  \item simplified symmetric measure \eqn{\mathcal{I}_n^\star} based on simplified complete measure 
+    \eqn{\mathcal{Q}_n^\star}
+}
 }
 
 \section{Testing mutual independence}{

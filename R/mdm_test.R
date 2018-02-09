@@ -9,22 +9,24 @@
 #'   If omitted, each component is assumed to contain exactly one variable.
 #' @param num_perm The number of permutation samples drawn to approximate the asymptotic distributions
 #'   of mutual dependence measures. If omitted, an adaptive number is used.
-#' @param type The type of mutual dependence measures, including \cr
-#'   - \code{asym_dcov}: asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance
-#'     \eqn{\mathcal{V}_n}; \cr
-#'   - \code{sym_dcov}: symmetric measure \eqn{\mathcal{S}_n} based on distance covariance
-#'     \eqn{\mathcal{V}_n}; \cr
-#'   - \code{comp}: complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics; \cr
-#'   - \code{comp_simp}: simplified complete measure \eqn{\mathcal{Q}_n^\star} based on
-#'     incomplete V-statistics; \cr
-#'   - \code{asym_comp}: asymmetric measure \eqn{\mathcal{J}_n} based on complete measure
-#'     \eqn{\mathcal{Q}_n}; \cr
-#'   - \code{asym_comp_simp}: simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on
-#'     simplified complete measure \eqn{\mathcal{Q}_n^\star}; \cr
-#'   - \code{sym_comp}: symmetric measure \eqn{\mathcal{I}_n} based on complete measure
-#'     \eqn{\mathcal{Q}_n}; \cr
-#'   - \code{sym_comp_simp}: simplified symmetric measure \eqn{\mathcal{I}_n^\star} based on
+#' @param type The type of mutual dependence measures, including
+#' \itemize{
+#'   \item \code{asym_dcov}: asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance
+#'     \eqn{\mathcal{V}_n}; 
+#'   \item \code{sym_dcov}: symmetric measure \eqn{\mathcal{S}_n} based on distance covariance
+#'     \eqn{\mathcal{V}_n}; 
+#'   \item \code{comp}: complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics;
+#'   \item \code{comp_simp}: simplified complete measure \eqn{\mathcal{Q}_n^\star} based on
+#'     incomplete V-statistics; 
+#'   \item \code{asym_comp}: asymmetric measure \eqn{\mathcal{J}_n} based on complete measure
+#'     \eqn{\mathcal{Q}_n}; 
+#'   \item \code{asym_comp_simp}: simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on
+#'     simplified complete measure \eqn{\mathcal{Q}_n^\star}; 
+#'   \item \code{sym_comp}: symmetric measure \eqn{\mathcal{I}_n} based on complete measure
+#'     \eqn{\mathcal{Q}_n}; 
+#'   \item \code{sym_comp_simp}: simplified symmetric measure \eqn{\mathcal{I}_n^\star} based on
 #'     simplified complete measure \eqn{\mathcal{Q}_n^\star}.
+#' }
 #'
 #' @return \code{mdm_test} returns a list including the following components:
 #' \item{stat}{The value of the mutual dependence measure.}
@@ -54,7 +56,7 @@
 #' mdm_test(X, dim_comp = c(1, 1, 1), type = "comp_simp")
 #' }
 
-mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = c("comp_simp")) {
+mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
   X <- as.matrix(X)
   num_obs <- nrow(X)
   num_dim <- ncol(X)
