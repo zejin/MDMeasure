@@ -3,16 +3,16 @@ Title: Mutual Dependence Measures via Energy Statistics
 Version: 1.0.0
 Date: 2018-01-30
 Authors@R: c(
-	person("Ze", "Jin", email = "zj58@cornell.edu", role = c("aut", "cre")),
-	person("David S.", "Matteson", email = "matteson@cornell.edu", role = c("aut"))
-	)
+    person("Ze", "Jin", email = "zj58@cornell.edu", role = c("aut", "cre")),
+    person("David S.", "Matteson", email = "matteson@cornell.edu", role = c("aut"))
+    )
 Description: Implementation of mutual dependence measures and mutual independence tests 
-	in Jin, Z., and Matteson, D. S. (2017) <https://arxiv.org/abs/1709.02532>.
+    in Jin, Z., and Matteson, D. S. (2017) <https://arxiv.org/abs/1709.02532>.
 Depends: 
-	R (>= 3.4.0)
+    R (>= 3.4.0)
 Suggests: 
-	testthat (>= 2.0.0),
-	energy (>= 1.7-0)
+    testthat (>= 2.0.0),
+    energy (>= 1.7-0)
 License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 6.0.1
