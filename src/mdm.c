@@ -36,6 +36,7 @@ void dCov_symmetric_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM
 
 /* common term in MDM based on (simplified) complete MDM */
 double MDM_term1(double *D, int nobs, int ncomp, int start);
+
 double MDM_term1_perm(double *D, int nobs, int ncomp, int start, int *IPERM);
 
 /* complete MDM */
