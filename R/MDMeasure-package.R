@@ -3,29 +3,19 @@
 #' The MDMeasure package provides measures of mutual dependence and tests of mutual independence. 
 #' 
 #' @section Measuring mutual dependence:
-#'
-#' The mutual dependence measures include:
-#'
-#' - asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance \eqn{\mathcal{V}_n}
-#'
-#' - symmetric measure \eqn{\mathcal{S}_n} based on distance covariance \eqn{\mathcal{V}_n}
-#'
-#' - complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics
-#'
-#' - simplified complete measure \eqn{\mathcal{Q}_n^\star} based on incomplete V-statistics
-#'
-#' - asymmetric measure \eqn{\mathcal{J}_n} based on complete measure \eqn{\mathcal{Q}_n}
-#'
+#' The mutual dependence measures include: \cr
+#' - asymmetric measure \eqn{\mathcal{R}_n} based on distance covariance \eqn{\mathcal{V}_n} \cr
+#' - symmetric measure \eqn{\mathcal{S}_n} based on distance covariance \eqn{\mathcal{V}_n} \cr
+#' - complete measure \eqn{\mathcal{Q}_n} based on complete V-statistics \cr
+#' - simplified complete measure \eqn{\mathcal{Q}_n^\star} based on incomplete V-statistics \cr
+#' - asymmetric measure \eqn{\mathcal{J}_n} based on complete measure \eqn{\mathcal{Q}_n} \cr
 #' - simplified asymmetric measure \eqn{\mathcal{J}_n^\star} based on simplified complete measure 
-#'   \eqn{\mathcal{Q}_n^\star}
-#'
-#' - symmetric measure \eqn{\mathcal{I}_n} based on complete measure \eqn{\mathcal{Q}_n}
-#'
+#'   \eqn{\mathcal{Q}_n^\star} \cr
+#' - symmetric measure \eqn{\mathcal{I}_n} based on complete measure \eqn{\mathcal{Q}_n} \cr
 #' - simplified symmetric measure \eqn{\mathcal{I}_n^\star} based on simplified complete measure 
 #'   \eqn{\mathcal{Q}_n^\star}
 #'
 #' @section Testing mutual independence:
-#'
 #' The mutual independence tests based on the mutual dependence measures are implemented as permutation 
 #' tests.
 #'
