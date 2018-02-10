@@ -8,32 +8,32 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* .C calls */
-extern void dCov(double *X, double *Y, double *XX, double *YY, double *Q, int *NOBS, int *NDIMX, int *NDIMY);
-extern void dCov_perm(double *XX, double *YY, double *Q, int *NOBS, int *IPERM);
+extern void dCov(double *X, double *Y, double *XX, double *YY, double *V, int *NOBS, int *NDIMX, int *NDIMY);
+extern void dCov_perm(double *XX, double *YY, double *V, int *NOBS, int *IPERM);
 
-extern void dCov_asymmetric(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
-extern void dCov_asymmetric_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
+extern void dCov_asymmetric(double *X, double *D, double *V, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
+extern void dCov_asymmetric_perm(double *D, double *V, int *NOBS, int *NCOMP, int *IPERM);
 
-extern void dCov_symmetric(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
-extern void dCov_symmetric_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
+extern void dCov_symmetric(double *X, double *D, double *V, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
+extern void dCov_symmetric_perm(double *D, double *V, int *NOBS, int *NCOMP, int *IPERM);
 
-extern void MDM_complete(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
-extern void MDM_complete_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
+extern void MDM_complete(double *X, double *D, double *V, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
+extern void MDM_complete_perm(double *D, double *V, int *NOBS, int *NCOMP, int *IPERM);
 
-extern void MDM_complete_simple(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
-extern void MDM_complete_simple_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
+extern void MDM_complete_simple(double *X, double *D, double *V, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
+extern void MDM_complete_simple_perm(double *D, double *V, int *NOBS, int *NCOMP, int *IPERM);
 
-extern void MDM_asymmetric(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
-extern void MDM_asymmetric_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
+extern void MDM_asymmetric(double *X, double *D, double *V, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
+extern void MDM_asymmetric_perm(double *D, double *V, int *NOBS, int *NCOMP, int *IPERM);
 
-extern void MDM_asymmetric_simple(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
-extern void MDM_asymmetric_simple_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
+extern void MDM_asymmetric_simple(double *X, double *D, double *V, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
+extern void MDM_asymmetric_simple_perm(double *D, double *V, int *NOBS, int *NCOMP, int *IPERM);
 
-extern void MDM_symmetric(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
-extern void MDM_symmetric_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
+extern void MDM_symmetric(double *X, double *D, double *V, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
+extern void MDM_symmetric_perm(double *D, double *V, int *NOBS, int *NCOMP, int *IPERM);
 
-extern void MDM_symmetric_simple(double *X, double *D, double *Q, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
-extern void MDM_symmetric_simple_perm(double *D, double *Q, int *NOBS, int *NCOMP, int *IPERM);
+extern void MDM_symmetric_simple(double *X, double *D, double *V, int *NOBS, int *NDIM, int *NCOMP, int *ICOMP);
+extern void MDM_symmetric_simple_perm(double *D, double *V, int *NOBS, int *NCOMP, int *IPERM);
 
 static const R_CMethodDef CEntries[] = {
   {"dCov",                       (DL_FUNC) &dCov,                       8},
@@ -57,8 +57,7 @@ static const R_CMethodDef CEntries[] = {
   {NULL, NULL, 0}
 };
 
-void R_init_MDMeasure(DllInfo *dll)
-{
+void R_init_MDMeasure(DllInfo *dll) {
   R_registerRoutines(dll, CEntries, NULL, NULL, NULL);
   R_useDynamicSymbols(dll, FALSE);
 }

@@ -72,7 +72,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
     out <- .C("dCov_asymmetric",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
-              Q = as.double(numeric(1)),
+              V = as.double(numeric(1)),
               NOBS = as.integer(num_obs),
               NDIM = as.integer(num_dim),
               NCOMP = as.integer(num_comp),
@@ -82,7 +82,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
     out <- .C("dCov_symmetric",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
-              Q = as.double(numeric(1)),
+              V = as.double(numeric(1)),
               NOBS = as.integer(num_obs),
               NDIM = as.integer(num_dim),
               NCOMP = as.integer(num_comp),
@@ -92,7 +92,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
     out <- .C("MDM_complete",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
-              Q = as.double(numeric(1)),
+              V = as.double(numeric(1)),
               NOBS = as.integer(num_obs),
               NDIM = as.integer(num_dim),
               NCOMP = as.integer(num_comp),
@@ -102,7 +102,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
     out <- .C("MDM_complete_simple",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
-              Q = as.double(numeric(1)),
+              V = as.double(numeric(1)),
               NOBS = as.integer(num_obs),
               NDIM = as.integer(num_dim),
               NCOMP = as.integer(num_comp),
@@ -112,7 +112,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
     out <- .C("MDM_asymmetric",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
-              Q = as.double(numeric(1)),
+              V = as.double(numeric(1)),
               NOBS = as.integer(num_obs),
               NDIM = as.integer(num_dim),
               NCOMP = as.integer(num_comp),
@@ -122,7 +122,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
     out <- .C("MDM_asymmetric_simple",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
-              Q = as.double(numeric(1)),
+              V = as.double(numeric(1)),
               NOBS = as.integer(num_obs),
               NDIM = as.integer(num_dim),
               NCOMP = as.integer(num_comp),
@@ -132,7 +132,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
     out <- .C("MDM_symmetric",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
-              Q = as.double(numeric(1)),
+              V = as.double(numeric(1)),
               NOBS = as.integer(num_obs),
               NDIM = as.integer(num_dim),
               NCOMP = as.integer(num_comp),
@@ -142,7 +142,7 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
     out <- .C("MDM_symmetric_simple",
               X = as.double(X),
               D = as.double(numeric(num_comp * num_obs * num_obs)),
-              Q = as.double(numeric(1)),
+              V = as.double(numeric(1)),
               NOBS = as.integer(num_obs),
               NDIM = as.integer(num_dim),
               NCOMP = as.integer(num_comp),
@@ -153,9 +153,9 @@ mdm <- function(X, dim_comp = NULL, dist_comp = FALSE, type = "comp_simp") {
   }
 
   if (dist_comp) {
-    return(list(stat = out$Q, dist = out$D))
+    return(list(stat = out$V, dist = out$D))
   } else {
-    return(list(stat = out$Q))
+    return(list(stat = out$V))
   }
 }
 

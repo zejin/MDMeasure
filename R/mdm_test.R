@@ -96,7 +96,7 @@ mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
     if (type == "asym_dcov") {
       out_perm <- .C("dCov_asymmetric_perm",
                      D = as.double(dist_sample),
-                     Q = as.double(numeric(1)),
+                     V = as.double(numeric(1)),
                      NOBS = as.integer(num_obs),
                      NCOMP = as.integer(num_comp),
                      IPERM = as.integer(index_perm),
@@ -104,7 +104,7 @@ mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
     } else if (type == "sym_dcov") {
       out_perm <- .C("dCov_symmetric_perm",
                      D = as.double(dist_sample),
-                     Q = as.double(numeric(1)),
+                     V = as.double(numeric(1)),
                      NOBS = as.integer(num_obs),
                      NCOMP = as.integer(num_comp),
                      IPERM = as.integer(index_perm),
@@ -112,7 +112,7 @@ mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
     } else if (type == "comp") {
       out_perm <- .C("MDM_complete_perm",
                      D = as.double(dist_sample),
-                     Q = as.double(numeric(1)),
+                     V = as.double(numeric(1)),
                      NOBS = as.integer(num_obs),
                      NCOMP = as.integer(num_comp),
                      IPERM = as.integer(index_perm),
@@ -120,7 +120,7 @@ mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
     } else if (type == "comp_simp") {
       out_perm <- .C("MDM_complete_simple_perm",
                      D = as.double(dist_sample),
-                     Q = as.double(numeric(1)),
+                     V = as.double(numeric(1)),
                      NOBS = as.integer(num_obs),
                      NCOMP = as.integer(num_comp),
                      IPERM = as.integer(index_perm),
@@ -128,7 +128,7 @@ mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
     } else if (type == "asym_comp") {
       out_perm <- .C("MDM_asymmetric_perm",
                      D = as.double(dist_sample),
-                     Q = as.double(numeric(1)),
+                     V = as.double(numeric(1)),
                      NOBS = as.integer(num_obs),
                      NCOMP = as.integer(num_comp),
                      IPERM = as.integer(index_perm),
@@ -136,7 +136,7 @@ mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
     } else if (type == "asym_comp_simp") {
       out_perm <- .C("MDM_asymmetric_simple_perm",
                      D = as.double(dist_sample),
-                     Q = as.double(numeric(1)),
+                     V = as.double(numeric(1)),
                      NOBS = as.integer(num_obs),
                      NCOMP = as.integer(num_comp),
                      IPERM = as.integer(index_perm),
@@ -144,7 +144,7 @@ mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
     } else if (type == "sym_comp") {
       out_perm <- .C("MDM_symmetric_perm",
                      D = as.double(dist_sample),
-                     Q = as.double(numeric(1)),
+                     V = as.double(numeric(1)),
                      NOBS = as.integer(num_obs),
                      NCOMP = as.integer(num_comp),
                      IPERM = as.integer(index_perm),
@@ -152,7 +152,7 @@ mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
     } else if (type == "sym_comp_simp") {
       out_perm <- .C("MDM_symmetric_simple_perm",
                      D = as.double(dist_sample),
-                     Q = as.double(numeric(1)),
+                     V = as.double(numeric(1)),
                      NOBS = as.integer(num_obs),
                      NCOMP = as.integer(num_comp),
                      IPERM = as.integer(index_perm),
@@ -161,7 +161,7 @@ mdm_test <- function(X, dim_comp = NULL, num_perm = NULL, type = "comp_simp") {
       stop("Invalid type. Read ?mdm_test for proper syntax.")
     }
 
-    mdm_perm <- out_perm$Q
+    mdm_perm <- out_perm$V
 
     if (mdm_perm >= mdm_sample) {
       count <- count + 1

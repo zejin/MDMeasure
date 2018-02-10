@@ -24,7 +24,7 @@ void double_center(int n, int p, double *X, double *XX) {
   double* col_sum = (double*) calloc(n, sizeof(double));
   
   double total_sum = 0.0;
-  double elem, part_sum;
+  double curr, part_sum;
   int i, j, k;
 
   for (j = 0; j < n; ++j) {
@@ -32,27 +32,27 @@ void double_center(int n, int p, double *X, double *XX) {
       if (i != j) {
         part_sum = 0.0;
 
-        //XX[i, j] = |X[i, ] - X[j, ]|
+        // XX[i, j] = |X[i, ] - X[j, ]|
         for (k = 0; k < p; ++k) {
-          elem = X[i*p+k] - X[j*p+k];
-          part_sum += elem * elem;
+          curr = X[i * p + k] - X[j * p + k];
+          part_sum += curr * curr;
         }
 
         part_sum = sqrt(part_sum);
 
-        XX[i+j*n] = part_sum;
+        XX[i + j * n] = part_sum;
         row_sum[i] += part_sum;
         col_sum[j] += part_sum;
         total_sum += part_sum;
       } else {
-        XX[i+j*n] = 0.0;
+        XX[i + j * n] = 0.0;
       }
     }
   }
 
   for (j = 0; j < n; ++j) {
     for (i = 0; i < n; ++i) {
-      XX[i+j*n] -= row_sum[i] / n + col_sum[j] / n - total_sum / n / n;
+      XX[i + j * n] -= row_sum[i] / n + col_sum[j] / n - total_sum / n / n;
     }
   }
 
@@ -68,7 +68,7 @@ double inner_prod(int n, double *XX, double *YY) {
   for (j = 0; j < n; ++j) {
     for (i = 0; i < n; ++i) {
       // XX[i, j] * YY[i, j]
-      sum += XX[i+j*n] * YY[i+j*n];
+      sum += XX[i + j * n] * YY[i + j * n];
     }
   }
 
@@ -83,7 +83,7 @@ double inner_prod_perm(int n, int *P, double *XX, double *YY) {
   for (j = 0; j < n; ++j) {
     for (i = 0; i < n; ++i) {
       // XX[i, j] * YY[P[i], P[j]]
-      sum += XX[i+j*n] * YY[P[i]+P[j]*n];
+      sum += XX[i + j * n] * YY[P[i] + P[j] * n];
     }
   }
 
@@ -93,26 +93,25 @@ double inner_prod_perm(int n, int *P, double *XX, double *YY) {
 // D is a ncomp x nobs x nobs vector
 void square_dist(double *X, double *D, int nobs, int ndim, int ncomp, int *ICOMP) {
   int i, j, k, l;
-  double diff, sumsq;
+  double curr, sq_sum;
 
   for (j = 0; j < nobs; ++j) {
     for (i = 0; i < nobs; ++i) {
       for (k = 0; k < ncomp; ++k) {
-        // calculate |X[i, k] - X[j, k]|^2
-        sumsq = 0.0;
+        // |X[i, k] - X[j, k]|^2
+        sq_sum = 0.0;
 
         if (i != j) {
           for (l = ICOMP[k]; l < ICOMP[k + 1]; ++l) { 
-            diff = X[i * ndim + l] - X[j * ndim + l];
-            sumsq += diff * diff;
+            curr = X[i * ndim + l] - X[j * ndim + l];
+            sq_sum += curr * curr;
           }
         }
 
-        D[ncomp * (i + j * nobs) + k] = sumsq;
+        D[ncomp * (i + j * nobs) + k] = sq_sum;
       }
     }
   } 
-
 }
 
 // find next index for complete V-statistics
@@ -158,10 +157,10 @@ void next_index_complete(int *index, int nobs, int ncomp) {
 
 // find next index for incomplete V-statistics
 void next_index_incomplete(int *index, int nobs, int ncomp) {
-  int i, temp;
+  int i, j;
 
   for (i = 0; i < ncomp; ++i) {
-    temp = index[i] + 1;
-    index[i] = temp % nobs;
+    j = index[i] + 1;
+    index[i] = j % nobs;
   }
 }
