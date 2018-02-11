@@ -8,6 +8,7 @@ citEntry(entry = "Article",
   year         = "2018",
   volume       = "1",
   number       = "0",
+  note         = "R package version 1.0.",
 
   textVersion  =
   paste("Ze Jin and David S. Matteson (2018).",
