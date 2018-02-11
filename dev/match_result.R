@@ -3,14 +3,14 @@ set.seed(12345)
 X <- matrix(rnorm(10 * 3), 10, 3)
 
 #
-mdm(X, type = "asym_dcov")
-mdm(X, type = "sym_dcov")
-mdm(X, type = "comp")
-mdm(X, type = "comp_simp")
-mdm(X, type = "asym_comp")
-mdm(X, type = "asym_comp_simp")
-mdm(X, type = "sym_comp")
-mdm(X, type = "sym_comp_simp")
+mdm(X, type = "asym_dcov")$stat
+mdm(X, type = "sym_dcov")$stat
+mdm(X, type = "comp")$stat
+mdm(X, type = "comp_simp")$stat
+mdm(X, type = "asym_comp")$stat
+mdm(X, type = "asym_comp_simp")$stat
+mdm(X, type = "sym_comp")$stat
+mdm(X, type = "sym_comp_simp")$stat
 
 # cd mmi/simulation/real_data/ff_5_year
 source('dCov.R')
